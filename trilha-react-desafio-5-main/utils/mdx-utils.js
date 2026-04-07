@@ -13,8 +13,8 @@ export const getPosts = async () => {
 export const getPostBySlug = async (id) => {
   const { data } = await api.get(`/post?id=eq.${id}`);
 
-  if (data) {
-    return data;
+  if (data && data.length > 0) {
+    return data[0];
   }
 
   return {};
